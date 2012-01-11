@@ -1,7 +1,11 @@
 //read function
 import groovyx.gpars.GParsPool
 import java.util.concurrent.*
-def file = new File("A-large-practice.in");
+
+String name = args[0]
+
+def file = new File(name);
+
 def inputMap = [:]
 
 def countLine = 0
@@ -50,7 +54,7 @@ GParsPool.withPool {
        }
 }
 
-printOut(result, no_cases)
+printOut(result, no_cases,  name)
 
 def process(Map input, int key, Map result){
     def price_items = input.get("price_items").split(" ")*.toInteger()
@@ -87,9 +91,9 @@ def process(Map input, int key, Map result){
 }
 
 
-def printOut(Map outPut, int no_cases){
+def printOut(Map outPut, int no_cases, String name){
 
-    f = new File('out.txt')
+    f = new File(name + '-out')
     
     f.withWriter { out ->
 
