@@ -7,7 +7,7 @@ def inputMap = [:]
 def countLine = 0
 def numCases = 0
 def numLineByCase = 3
-def processCase = false
+
 
 def no_cases = 0
 def intCauseCounter = 0
